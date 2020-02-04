@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Webpack手动配置环境 | OctopusRoe Blog</title>
+  <title>手动配置Webpack开发环境 | OctopusRoe Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Other">
+  <meta name="description" content="安装babel包使JS文件可以直接运行 运行npm install –save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-env @babel&#x2F;node 运行npm install –save @babel&#x2F;polyfill 在项目的根目录中创建 babel.config.js 文件1const presets &amp;#x3D; [">
+<meta name="keywords" content="Other">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Webpack手动配置环境">
+<meta property="og:title" content="手动配置Webpack开发环境">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;04&#x2F;webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83&#x2F;index.html">
 <meta property="og:site_name" content="OctopusRoe Blog">
+<meta property="og:description" content="安装babel包使JS文件可以直接运行 运行npm install –save-dev @babel&#x2F;core @babel&#x2F;cli @babel&#x2F;preset-env @babel&#x2F;node 运行npm install –save @babel&#x2F;polyfill 在项目的根目录中创建 babel.config.js 文件1const presets &amp;#x3D; [">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-04T07:24:03.664Z">
+<meta property="og:updated_time" content="2020-02-04T15:18:02.922Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="OctopusRoe Blog" type="application/atom+xml">
@@ -162,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Webpack手动配置环境
+      手动配置Webpack开发环境
     </h1>
   
 
@@ -175,7 +177,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="安装babel包使JS文件可以直接运行"><a href="#安装babel包使JS文件可以直接运行" class="headerlink" title="安装babel包使JS文件可以直接运行"></a>安装babel包使JS文件可以直接运行</h2><ol>
+<li>运行<font color="6A5ACD">npm install –save-dev @babel/core @babel/cli @babel/preset-env @babel/node</font></li>
+<li>运行<font color="6A5ACD">npm install –save @babel/polyfill</font></li>
+<li>在项目的根目录中创建 <font color="6A5ACD">babel.config.js</font> 文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const presets &#x3D; [               &#x2F;&#x2F;设置presets</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    [&quot;@babel&#x2F;env&quot;,&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        targets:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">            edge: &quot;17&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">            firefox: &quot;60&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            chrome: &quot;67&quot;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            safari: &quot;11.1&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;presets&#125;;     &#x2F;&#x2F;把presets按需导出</span></pre></td></tr></table></figure></li>
+<li>可以通过 npx babel-node index.js 执行代码</li>
+</ol>
+<h2 id="初始化包管理配置文件"><a href="#初始化包管理配置文件" class="headerlink" title="初始化包管理配置文件"></a>初始化包管理配置文件</h2><ol>
+<li>新建空白项目目录，并运行 <font color="6A5ACD">npm init -y</font> 命令，初始化包管理配置文件 <font color="6A5ACD">package.json</font></li>
+<li>在项目目录下新建 <font color="6A5ACD">src</font> 文件夹(此文件夹用于放置源代码文件)</li>
+</ol>
+<h2 id="在项目中安装和配置webpack"><a href="#在项目中安装和配置webpack" class="headerlink" title="在项目中安装和配置webpack"></a>在项目中安装和配置webpack</h2><ol>
+<li>在项目目录中运行 <font color="6A5ACD">npm install -D webpack webpack-cli</font> 命令，安装 webpack 相关包</li>
+<li>在项目目录中，创建 <font color="6A5ACD">webpack.config.js</font> 的 webpack 配置文件</li>
+<li>在 <font color="6A5ACD">webpack.config.js</font> 文件中，初始化基本配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const path &#x3D; require(&#39;path&#39;)                        &#x2F;&#x2F;导入node模块的path模块(path专用于操作路径)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#x2F;&#x2F; 编译模式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    mode: &#39;development&#39;,                            &#x2F;&#x2F;mode用来指定构建模式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    entry: path.join(__dirname,&#39;.&#x2F;src&#x2F;index.js&#39;),   &#x2F;&#x2F;手动设置入口文件路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    output: &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        path: path.join(__dirname,&#39;.&#x2F;dist&#39;),        &#x2F;&#x2F;手动设置输出文件的存放路径</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        filename: &#39;bundle.js&#39;                       &#x2F;&#x2F;手动设置输出文件名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<blockquote>
+<p><strong><font color="6A5ACD">mode</font> 的参数</strong></p>
+<blockquote>
+<ul>
+<li><font color="6A5ACD">development</font> 模式，转换后的代码不会压缩和混淆，提升转化速度</li>
+<li><font color="6A5ACD">production</font> 模式，转换后的代码会压缩和混淆，用于发布</li>
+</ul>
+</blockquote>
+<p><strong><font color="6A5ACD">entry</font> 用于指定打包入口文件</strong><br><strong><font color="6A5ACD">output</font> 用于指定打包的输出文件</strong></p>
+</blockquote>
+</li>
+<li>在 <font color="6A5ACD">package.json</font> 包管理配置文件中的 <font color="6A5ACD">script</font> 节点下，新增 <font color="6A5ACD">dev</font> 脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&quot;script&quot;:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &quot;dev&quot;: &quot;webpack&quot;       &#x2F;&#x2F;script 节点下的脚本，可以通过 npm run 执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+
       
 
       
