@@ -149,6 +149,184 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-npm-install-参数说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/04/npm-install-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E/">Npm install --save 和 --save-dev 参数说明</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/04/npm-install-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E/" class="archive-article-date">
+  	<time datetime="2020-02-04T06:18:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="npm-install-命令"><a href="#npm-install-命令" class="headerlink" title="npm install 命令"></a><font color="6A5ACD"><strong>npm install 命令</strong></font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install moduleName              &#x2F;&#x2F;安装模块到项目目录下</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">npm install -g moduleName           &#x2F;&#x2F;-g 参数是把模块安装到全局，具体安装到那个磁盘，需要看npm config prefix的位置</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">npm install --save moduleName        &#x2F;&#x2F;-save 参数是把模块安装到项目的目录下，并且在package文件的dependencies节点写入依赖</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">npm install --save-dev moduleName   &#x2F;&#x2F;--save-dev 参数是把模块安装到项目的目录下，并且在package文件的devDependencies节点写入依赖</span></pre></td></tr></table></figure>
+
+<h3 id="npm-install-moduleName-命令"><a href="#npm-install-moduleName-命令" class="headerlink" title="npm install moduleName 命令"></a>npm install moduleName 命令</h3><ol>
+<li>安装模块到项目的<font color="6A5ACD">node_modules</font>目录下。</li>
+<li>不会将模块依赖写入<font color="6A5ACD">devDependencies</font>或者<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>运行npm install 初始化项目时不会下载模块。</li>
+</ol>
+<h3 id="npm-install-g-moduleName-命令"><a href="#npm-install-g-moduleName-命令" class="headerlink" title="npm install -g moduleName 命令"></a>npm install -g moduleName 命令</h3><ol>
+<li>安装模块到全局，不会再项目<font color="6A5ACD">node_modules</font>目录中保存模块包。</li>
+<li>不会将模块依赖写入<font color="6A5ACD">devDependencies</font>或者<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>运行npm install 初始化项目时不会下载模块。</li>
+</ol>
+<h3 id="npm-install-–save-moduleName-命令"><a href="#npm-install-–save-moduleName-命令" class="headerlink" title="npm install –save moduleName 命令"></a>npm install –save moduleName 命令</h3><ol>
+<li>简写为 npm install -S moduleName。</li>
+<li>安装模块到项目<font color="6A5ACD">node_modules</font>目录下。</li>
+<li>会将模块依赖写入<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>运行npm install 初始化项目时，会将模块下载到项目目录下。</li>
+<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>会</strong>自动下载模块到<font color="6A5ACD">node_modules</font>目录中。</li>
+</ol>
+<h3 id="npm-install-–save-dev-moduleName-命令"><a href="#npm-install-–save-dev-moduleName-命令" class="headerlink" title="npm install –save-dev moduleName 命令"></a>npm install –save-dev moduleName 命令</h3><ol>
+<li>简写为 npm install -D moduleName。</li>
+<li>安装模块到项目<font color="6A5ACD">node_modules</font>目录下。</li>
+<li>会将模块依赖写入<font color="6A5ACD">devDependencies</font>节点中。</li>
+<li>运行npm install 初始化项目时，会将模块下载到项目目录下。</li>
+<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>不会</strong>自动下载模块到<font color="6A5ACD">node_modules</font>目录中。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li><p><font color="6A5ACD">devDependencies</font> 节点下的模块是我们在开发时所需要用的，像用于css js代码压缩、转换的webpack插件、babel插件，这些模块在我们的项目部署后是不需要的，所以我们可以通过 <font color="6A5ACD">–save-dev</font>参数安装(简写：<font color="6A5ACD">-D</font>)。</p>
+</li>
+<li><p><font color="6A5ACD">dependencies</font> 节点下的模块是我们在项目运行时必备的，所以我们应该通过 <font color="6A5ACD">–save</font>参数安装(简写：<font color="6A5ACD">-S</font>)。</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Other</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/04/npm-install-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-webpack手动配置环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">Webpack手动配置环境</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+  	<time datetime="2020-02-04T06:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Other</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript类的继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -206,7 +384,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">Js</a>
         		</li>
       		
 		</ul>
@@ -501,7 +679,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">Css</a>
         		</li>
       		
 		</ul>
@@ -598,7 +776,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">Git</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Other</a>
         		</li>
       		
 		</ul>
