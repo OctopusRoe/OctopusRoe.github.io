@@ -155,19 +155,212 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-TypeScript" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/05/Vue/">Vue 单文件组件</a>
+      <a class="article-title" href="/2020/02/09/TypeScript/">&#39;TypeScript&#39;</a>
     </h1>
   
 
         
-        <a href="/2020/02/05/Vue/" class="archive-article-date">
+        <a href="/2020/02/09/TypeScript/" class="archive-article-date">
+  	<time datetime="2020-02-09T12:56:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/09/TypeScript/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue router 前端路由组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/07/Vue%20router%20%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/">Vue router 前端路由组件</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/07/Vue%20router%20%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2020-02-07T07:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本使用步骤"><a href="#基本使用步骤" class="headerlink" title="基本使用步骤"></a>基本使用步骤</h2><ol>
+<li>引入相关的库文件</li>
+<li>添加路由链接和路由占位符<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;!-- router-link 标签是 Vue 中提供的标签，默认会被渲染成为 Html 的 a 标签 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&lt;!-- router-view 标签是 Vue 中提供的标签，通过路由规则匹配到的组件，将会被渲染到 router-view 标签所在的位置 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&lt;!-- to 属性默认会被渲染为 href 属性 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&lt;!-- to 属性的值会被渲染为 # 开头的 hash 地址 --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;user&quot;&gt;User&lt;&#x2F;router-link&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &lt;router-link to&#x3D;&quot;&#x2F;register&quot;&gt;Register&lt;&#x2F;router-link&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &lt;router-view&gt;&lt;&#x2F;router-view&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&lt;&#x2F;div&gt;</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><font color="6A5ACD">router-link</font> 标签是 <font color="6A5ACD">Vue</font> 中提供的标签，默认会被渲染成为 Html 的 <font color="6A5ACD">a</font> 标签</li>
+<li><font color="6A5ACD">router-view</font> 标签是 <font color="6A5ACD">Vue</font> 中提供的标签，通过路由规则匹配到的组件，将会被渲染到 <font color="6A5ACD">router-view</font> 标签所在的位置</li>
+<li><font color="6A5ACD">to</font> 属性默认会被渲染为 <font color="6A5ACD">href</font> 属性</li>
+<li><font color="6A5ACD">to</font> 属性的值会被渲染为 <font color="6A5ACD">#</font> 开头的 <font color="6A5ACD">hash</font> 地址</li>
+</ul>
+</blockquote>
+</li>
+<li>定义路由组件</li>
+<li>配置路由规则并创建路由实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const router &#x3D; new VueRouter(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    routes: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; redirect 表示将要被重新定向到的新地址</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; path 表示当前路由规则所匹配的 hash 地址</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; component 表示当前路由规则对应要展示的组件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; name 表示为当前路由规则起一个别名</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; children 表示为父节点添加子路由规则</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;&#39;,redirect: &#39;&#x2F;user&#39;&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;user&#39;,component: User&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;reqister&#39;,component: Reqister&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;kind&#39;,name: &#39;kind&#39;,component: Kind,children:[</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            &#123;path: &#39;&#x2F;kind&#x2F;tab1&#39;,component: Tab1&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            &#123;path: &#39;&#x2F;kind&#x2F;tab2&#39;,component: Tab2&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        ]&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><font color="6A5ACD">redirect</font> 表示将要被重新定向到的新地址</li>
+<li><font color="6A5ACD">path</font> 表示当前路由规则所匹配的 hash 地址</li>
+<li><font color="6A5ACD">component</font> 表示当前路由规则对应要展示的组件</li>
+<li><font color="6A5ACD">name</font> 表示为当前路由规则起一个别名</li>
+<li><font color="6A5ACD">children</font> 表示为父节点添加子路由规则,值为<font color="6A5ACD">Array</font></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="动态匹配路由"><a href="#动态匹配路由" class="headerlink" title="动态匹配路由"></a>动态匹配路由</h2><p><strong>通过动态路由参数进行路由匹配</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const router &#x3D; new VueRouter(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    routes: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 动态路径参数以 : 开头</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 路由组件通过 $route.params 获取路由参数</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;user&#x2F;:id&#39;,component: User&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>动态路径参数以 <font color="6A5ACD">:</font> 开头</li>
+<li>路由组件通过 <font color="6A5ACD">$route.params</font> 获取路由参数</li>
+</ul>
+</blockquote>
+<p><strong>路由组件传递参数</strong></p>
+<ol>
+<li><font color="6A5ACD">props</font> 的值为布尔类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const router &#x3D; new VueRouter(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    routes: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 如果 props 设置为 true，route.params 将会被设置为组件属性</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;user&#x2F;:id&#39;,component: User,props: true&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 给组件设置 props 属性，用于接收路由参数,并使用</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">const User &#x3D; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    props: [&#39;id&#39;],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    template: &#39;&lt;div&gt;用户ID：&#123;&#123;id&#125;&#125;&lt;&#x2F;div&gt;&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>如果 <font color="6A5ACD">props</font> 设置为 <font color="6A5ACD">true</font>,<font color="6A5ACD">route.params</font> 将会被设置为组件属性</li>
+<li>给组件设置 <font color="6A5ACD">props</font> 属性，用于接收路由参数,并使用</li>
+</ul>
+</blockquote>
+</li>
+<li><font color="6A5ACD">props</font> 的值为对象类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const router &#x3D; new VueRouter(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    routes: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 如果 props 设置为对象，它会被按原样设置为组件属性</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; path 里的:id 无法获取</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;user&#x2F;:id&#39;,component: User,props: &#123;name:&#39;123&#39;,age:32&#125;&#125;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">const User &#x3D; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    props: [&#39;name&#39;,&#39;age&#39;],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    template: &#39;&lt;div&gt;用户：&#123;&#123;name+&#39;--&#39;+age&#125;&#125;&lt;&#x2F;div&gt;&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>如果 <font color="6A5ACD">props</font> 设置为对象，它会被按原样设置为组件属性</li>
+</ul>
+</blockquote>
+</li>
+<li><font color="6A5ACD">props</font> 的值为函数类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">const router &#x3D; new VueRouter(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    routes: [</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; 如果 props 设置为函数，则这个函数接收 route 对象为自己的形参</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        &#x2F;&#x2F; path 里的:id 可以获取</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        &#123;path: &#39;&#x2F;user&#x2F;:id&#39;,component: User,props: route &#x3D;&gt; (&#123;name:&#39;123&#39;,age:34,id:route.params.id&#125;),</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    ]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">const User &#x3D; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    props: [&#39;name&#39;,&#39;age&#39;],</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    template: &#39;&lt;div&gt;用户：&#123;&#123;name+&#39;--&#39;+age+&#39;--&#39;+id&#125;&#125;&lt;&#x2F;div&gt;&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>如果 <font color="6A5ACD">props</font> 设置为函数，则这个函数接收 route 对象为自己的形参</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/07/Vue%20router%20%E5%89%8D%E7%AB%AF%E8%B7%AF%E7%94%B1%E7%BB%84%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue 单文件组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/05/Vue%20%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6/">Vue 单文件组件</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/05/Vue%20%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6/" class="archive-article-date">
   	<time datetime="2020-02-05T14:52:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
 </a>
         
@@ -203,7 +396,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/05/Vue/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/05/Vue%20%E5%8D%95%E6%96%87%E4%BB%B6%E7%BB%84%E4%BB%B6/">展开全文 >></a>
         </p>
       
 
@@ -356,33 +549,33 @@
         <h3 id="npm-install-命令"><a href="#npm-install-命令" class="headerlink" title="npm install 命令"></a><font color="6A5ACD"><strong>npm install 命令</strong></font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">npm install moduleName              &#x2F;&#x2F;安装模块到项目目录下</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">npm install -g moduleName           &#x2F;&#x2F;-g 参数是把模块安装到全局，具体安装到那个磁盘，需要看npm config prefix的位置</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">npm install --save moduleName        &#x2F;&#x2F;-save 参数是把模块安装到项目的目录下，并且在package文件的dependencies节点写入依赖</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">npm install --save-dev moduleName   &#x2F;&#x2F;--save-dev 参数是把模块安装到项目的目录下，并且在package文件的devDependencies节点写入依赖</span></pre></td></tr></table></figure>
 
 <h3 id="npm-install-moduleName-命令"><a href="#npm-install-moduleName-命令" class="headerlink" title="npm install moduleName 命令"></a>npm install moduleName 命令</h3><ol>
-<li>安装模块到项目的<font color="6A5ACD">node_modules</font>目录下。</li>
-<li>不会将模块依赖写入<font color="6A5ACD">devDependencies</font>或者<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>安装模块到项目的 <font color="6A5ACD">node_modules</font> 目录下。</li>
+<li>不会将模块依赖写入 <font color="6A5ACD">devDependencies</font> 或者 <font color="6A5ACD">dependencies</font> 节点中。</li>
 <li>运行npm install 初始化项目时不会下载模块。</li>
 </ol>
 <h3 id="npm-install-g-moduleName-命令"><a href="#npm-install-g-moduleName-命令" class="headerlink" title="npm install -g moduleName 命令"></a>npm install -g moduleName 命令</h3><ol>
-<li>安装模块到全局，不会再项目<font color="6A5ACD">node_modules</font>目录中保存模块包。</li>
-<li>不会将模块依赖写入<font color="6A5ACD">devDependencies</font>或者<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>安装模块到全局，不会再项目 <font color="6A5ACD">node_modules</font> 目录中保存模块包。</li>
+<li>不会将模块依赖写入 <font color="6A5ACD">devDependencies</font> 或者 <font color="6A5ACD">dependencies</font> 节点中。</li>
 <li>运行npm install 初始化项目时不会下载模块。</li>
 </ol>
 <h3 id="npm-install-–save-moduleName-命令"><a href="#npm-install-–save-moduleName-命令" class="headerlink" title="npm install –save moduleName 命令"></a>npm install –save moduleName 命令</h3><ol>
 <li>简写为 npm install -S moduleName。</li>
-<li>安装模块到项目<font color="6A5ACD">node_modules</font>目录下。</li>
-<li>会将模块依赖写入<font color="6A5ACD">dependencies</font>节点中。</li>
+<li>安装模块到项目 <font color="6A5ACD">node_modules</font> 目录下。</li>
+<li>会将模块依赖写入 <font color="6A5ACD">dependencies</font> 节点中。</li>
 <li>运行npm install 初始化项目时，会将模块下载到项目目录下。</li>
-<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>会</strong>自动下载模块到<font color="6A5ACD">node_modules</font>目录中。</li>
+<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>会</strong>自动下载模块到 <font color="6A5ACD">node_modules</font> 目录中。</li>
 </ol>
 <h3 id="npm-install-–save-dev-moduleName-命令"><a href="#npm-install-–save-dev-moduleName-命令" class="headerlink" title="npm install –save-dev moduleName 命令"></a>npm install –save-dev moduleName 命令</h3><ol>
 <li>简写为 npm install -D moduleName。</li>
-<li>安装模块到项目<font color="6A5ACD">node_modules</font>目录下。</li>
-<li>会将模块依赖写入<font color="6A5ACD">devDependencies</font>节点中。</li>
+<li>安装模块到项目 <font color="6A5ACD">node_modules</font> 目录下。</li>
+<li>会将模块依赖写入 <font color="6A5ACD">devDependencies</font> 节点中。</li>
 <li>运行npm install 初始化项目时，会将模块下载到项目目录下。</li>
-<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>不会</strong>自动下载模块到<font color="6A5ACD">node_modules</font>目录中。</li>
+<li>运行npm install –production或者注明NODE_ENV变量值为production时，<strong>不会</strong>自动下载模块到 <font color="6A5ACD">node_modules</font> 目录中。</li>
 </ol>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li><p><font color="6A5ACD">devDependencies</font> 节点下的模块是我们在开发时所需要用的，像用于css js代码压缩、转换的webpack插件、babel插件，这些模块在我们的项目部署后是不需要的，所以我们可以通过 <font color="6A5ACD">–save-dev</font>参数安装(简写：<font color="6A5ACD">-D</font>)。</p>
+<li><p><font color="6A5ACD">devDependencies</font> 节点下的模块是我们在开发时所需要用的，像用于css js代码压缩、转换的webpack插件、babel插件，这些模块在我们的项目部署后是不需要的，所以我们可以通过 <font color="6A5ACD">–save-dev</font> 参数安装(简写：<font color="6A5ACD">-D</font>)。</p>
 </li>
-<li><p><font color="6A5ACD">dependencies</font> 节点下的模块是我们在项目运行时必备的，所以我们应该通过 <font color="6A5ACD">–save</font>参数安装(简写：<font color="6A5ACD">-S</font>)。</p>
+<li><p><font color="6A5ACD">dependencies</font> 节点下的模块是我们在项目运行时必备的，所以我们应该通过 <font color="6A5ACD">–save</font> 参数安装(简写：<font color="6A5ACD">-S</font>)。</p>
 </li>
 </ol>
 
@@ -438,19 +631,19 @@
 
 
   
-    <article id="post-webpack手动配置环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-webpack 手动配置环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">手动配置Webpack开发环境</a>
+      <a class="article-title" href="/2020/02/04/webpack%20%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">手动配置Webpack开发环境</a>
     </h1>
   
 
         
-        <a href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+        <a href="/2020/02/04/webpack%20%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2020-02-04T06:16:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
 </a>
         
@@ -546,6 +739,7 @@
 <h2 id="在-webpack-项目中使用-vue"><a href="#在-webpack-项目中使用-vue" class="headerlink" title="在 webpack 项目中使用 vue"></a>在 webpack 项目中使用 vue</h2><ol>
 <li>在项目目录中运行 <font color="6A5ACD">npm install -S vue</font> 命令，安装vue</li>
 <li>在 <font color="6A5ACD">webpack</font> 入口文件中，通过 <font color="6A5ACD">import Vue from ‘vue’</font> 导入 vue 构造函数</li>
+<li>修改 <font color="6A5ACD">webpack.config.js</font> 中 <font color="6A5ACD">mode</font> 属性值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">mode: &#39;production&#39;</span></pre></td></tr></table></figure></li>
 <li>创建 <font color="6A5ACD">vue</font> 的实例对象，并指定要控制的 el 区域</li>
 <li>通过 <font color="6A5ACD">render</font> 函数渲染组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导入 vue 构造函数</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 导入 vue 单文件组件</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">import App from &#39;.&#x2F;components&#x2F;App.vue&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">const vm &#x3D; new Vue(&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    el: &#39;#app&#39;,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#x2F;&#x2F; 通过 render 函数，把指定的组件渲染到 el 区域</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    render:function(h)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        return h(App)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;)</span></pre></td></tr></table></figure></li>
 </ol>
@@ -572,7 +766,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/04/webpack%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/02/04/webpack%20%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83/">展开全文 >></a>
         </p>
       
 
